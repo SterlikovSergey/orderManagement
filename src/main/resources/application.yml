@@ -1,1 +1,22 @@
-spring.application.name=orderManagement
+server:
+  port: 8898
+spring:
+  application:
+    name: orderManagement
+  datasource:
+    url: jdbc:postgresql://localhost:5432/orderManagementDB
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        default_schema: public
+    open-in-view: false
+  data:
+    rest:
+      base-path: /
+      return-body-on-create: true
